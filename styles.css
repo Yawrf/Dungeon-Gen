@@ -1,0 +1,90 @@
+canvas { 
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  background-color: #000;
+}
+div#controls { 
+  position: absolute; 
+  top: 5px; 
+  left: 5px; 
+  font-family: arial;
+  font-size: 16px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+div#warnings { 
+  position: absolute; 
+  bottom: 5px; 
+  left: 5px; 
+  font-family: arial;
+  font-size: 16px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+label.warnings {
+  color: #FFF; 
+  background-color: black;
+  padding: 3px;
+}
+div#info { 
+  position: absolute; 
+  bottom: 5px; 
+  right: 5px; 
+  font-family: arial;
+  font-size: 16px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  max-width: calc(20%);
+  max-height: calc(50%);
+  border-radius: 15px;
+  overflow: hidden;
+}
+label.info {
+  color: #FFF; 
+  background-color: black;
+  padding: 3px;
+  text-align: right;
+}
+label.controls { 
+  color: #FFF; 
+  text-shadow: 0 0 2px #000;
+}
+body { overflow: hidden; }
+
+div#stampbox {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stamp { visibility: hidden }
+.warnings { visibility: hidden }
+
+div.controlTip {
+  display:flex;
+  flex-direction: column;
+  background-color: #333333DD;
+  border: solid #555;
+  border-radius: 15px;
+  overflow: auto;
+  padding: 3px;
+}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background-color: #444; border-radius: 5px; }
+::-webkit-scrollbar-thumb { background-color: #888; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background-color: #AAA; }
+label.controlTip {
+  color: #CCC;
+  word-wrap: break-word;
+}
+label.controlTipIndent {
+  position: relative;
+  left: 20px;
+  max-width: calc(100% - 20px);
+}

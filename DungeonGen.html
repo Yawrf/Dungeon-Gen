@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dungeon Proc</title>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body id="body" oncontextmenu="return false;">
+        <canvas id="canvas"></canvas>
+        <div id="controls"> 
+            <div>
+                <button id="toImage" type="button">Create Image</button>
+                <button id="clearMap" type="button">Clear Map</button>
+                <input id="fillRadio" type=radio name="manip" checked>
+                <label class="controls"> Fill: </label> 
+                <input id="fillColor" type=color value=#FFFFFF> 
+                <input id="edgeRadio" type=radio name="manip">
+                <label class="controls"> Edge: </label> 
+                <input id="edgeColor" type=color value=#FFFFFF> 
+                <input id="doorRadio" type=radio name="manip">
+                <label class="controls" title="Double Click Doors to Edit Type"> Door </label>
+                <input id="doorsCheck" type=checkbox checked>
+                <label class="controls"> Show Doors </label>
+                <input id="doorTypesCheck" type=checkbox checked>
+                <label class="controls"> Show Door Types </label>
+                <input id="lightRadio" type="radio" name="manip">
+                <label class="controls" title="Double Click Lights to Edit Details"> Light: </label>
+                <input id="lightColor" type="color" value="#FFFFFF">
+                <input id="lightsCheck" type="checkbox" checked>
+                <label class="controls"> Show Lights </label>
+            </div>
+            <div id="blockingDiv">
+                <input id="blockMoveCheck" type="checkbox">
+                <label class="controls"> Block Movement </label>
+                <input id="blockSightCheck" type="checkbox">
+                <label class="controls"> Block Sight </label>
+            </div>
+            <div id="stamps">
+                <input id="stampRadio" type="radio" name="manip">
+                <label class="controls"> Stamp: </label>
+                <select id="stampList"></select>
+                <input id="collideCheck" type="checkbox" checked>
+                <label class="controls" title="If unchecked, will still allow collision if elements match (ie same color fill)"> Allow Collision </label>
+                <input id="doorMatchCheck" type="checkbox">
+                <label class="controls"> Doors must Match </label>
+            </div>
+            <div id="stampCreation" class="stamp">
+                <button id="saveStamp" class="stamp" type="button">Save and Exit Stamp</button>
+                <input id="saveStampName" class="stamp" type="text" placeholder="Stamp Name" minLength="1" maxlength="64">
+                <button id="exitStamp" class="stamp" type="button">Cancel/Delete Stamp</button>
+            </div>
+        </div>
+        <div id="warnings">
+            <label id="warningFilesize" class="warnings"> Filesize too large to save. </label>
+            <label id="warningMapLag" class="warnings" title="(Usually caused by edit history, refreshing page will temporarily fix)"> Map size causing lag. </label>
+        </div>
+        <div id="info">
+            <label id="infoDimensions" class="info" title="Max dimension 800 per dimension to maintain 20px/cell export"></label>
+        </div>
+        <div id="stampbox" >
+            <button class="perm" id="propagate" type="button">Propagate Stamps</button>
+            <button class="perm" id="newStamp" type="button">New Stamp</button>
+        </div>
+    </body>
+</html>
