@@ -742,7 +742,7 @@ function placeStamp(placeMap = ghostMap) {
             }
         }
     }
-    for(let l of placeMap.lights) map.setLight(l.x, l.y, l.color, l.dim, l.bright, l.alpha);
+    for(let l of placeMap.mapLights) map.setLight(l.x, l.y, l.color, l.dim, l.bright, l.alpha);
 }
 
 const lerp = (x, y, i) => x * (1 - i) + y * i;
